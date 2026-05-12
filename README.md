@@ -1,105 +1,49 @@
+html_content = '''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>EJ Matejevich - About</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; background-color: #f4f4f4; }
+header { background: #333; color: #fff; padding: 20px 0; text-align: center; }
+.container { width: 80%; margin: auto; overflow: hidden; padding: 20px; }
+h1, h2 { color: #333; }
+.section { margin-bottom: 30px; }
+footer { background: #333; color: #fff; text-align: center; padding: 10px 0; position: fixed; width: 100%; bottom: 0; }
+</style>
+</head>
+<body>
+<header>
+<h1>EJ Matejevich</h1>
+<p>CREATOR · INNOVATOR · DEVELOPER</p>
+</header>
+<div class="container">
+<div class="section" id="about">
+<h2>About Me</h2>
+<p>Born and raised in NYC with Serbian, Irish, and Filipino roots. A five-year student at The Browning School driven by a passion for finance, entrepreneurship, law, and technology — committed to growth in every arena.</p>
+</div>
+<div class="section" id="background-interests">
+<h2>Background & Interests</h2>
+<p>Basketball in recreational leagues and piano at Filipino roots. Five years at The Browning School, recitals keep me disciplined and balanced, consistently challenging myself academically outside of academics, and growing as a leader.</p>
+</div>
+<div class="section" id="looking-forward">
+<h2>Looking Forward</h2>
+<p>Actively involved in Mock Trial, Model United Nations, and Debate — aiming to earn recognition in competitions and gain valuable experience through internships and future career opportunities.</p>
+<p>Active member contributing to school culture, community storytelling, and publication.</p>
+</div>
+<div class="section" id="activities">
+<h2>Activities</h2>
+<h3>Model United Nations & Debate</h3>
+<p>Actively involved in Model UN, working toward awards in competitive conferences. Participating in debate tournaments, developing argumentation and critical thinking under pressure.</p>
+</div>
+</div>
+<footer>
+<p>&copy; 2024 EJ Matejevich</p>
+</footer>
+</body>
+</html>
+'''
 
-def generate_exact_readme():
-    # Data meticulously extracted from ej_website_final_no_grytte.html
-    user_info = {
-        "name": "EJ Matejevich",
-        "tagline": "Creator · Innovator · Developer",
-        "intro": "Born and raised in NYC with Serbian, Irish, and Filipino roots. A five-year student at The Browning School driven by a passion for finance, entrepreneurship, law, and technology — committed to growth in every arena.",
-        "education": "The Browning School",
-        "location": "New York City, NY",
-        "contact": {
-            "email": "ematejevich@browning.edu",
-            "phone": "(917) 494-6038",
-            "location": "New York City, NY"
-        },
-        "stats": [
-            {"label": "Academic Tenure", "value": "5 years at The Browning School"},
-            {"label": "Core Focus", "value": "Finance, Law, & Technology"},
-            {"label": "Identity", "value": "Serbian, Irish, and Filipino Heritage"}
-        ],
-        "activities": [
-            {
-                "name": "The Grytte Newspaper",
-                "role": "Contributor",
-                "details": [
-                    "Active involvement in school journalism and reporting.",
-                    "Contributing to the long-standing publication at The Browning School."
-                ]
-            },
-            {
-                "name": "Entrepreneurship & Innovation",
-                "role": "Student Innovator",
-                "details": [
-                    "Focusing on the intersection of modern finance and emerging tech.",
-                    "Applying problem-solving skills to real-world entrepreneurial challenges."
-                ]
-            }
-        ],
-        "skills": {
-            "Technical & Innovation": [
-                "Web Development", 
-                "Technical Problem Solving", 
-                "Innovation"
-            ],
-            "Mindset & Professional": [
-                "Entrepreneurial mindset", 
-                "Adaptability & problem solving", 
-                "Critical Thinking"
-            ],
-            "Communication & Leadership": [
-                "Public Speaking", 
-                "Leadership", 
-                "Journalism"
-            ]
-        }
-    }
-
-    # Constructing the exact replica in Markdown format
-    md = []
-    md.append(f"# {user_info['name']}")
-    md.append(f"### {user_info['tagline']}\n")
-    md.append(f"> {user_info['intro']}\n")
-    
-    md.append("---")
-    
-    md.append("## 🎓 Education & Background")
-    md.append(f"- **School:** {user_info['education']}")
-    md.append(f"- **Location:** {user_info['location']}")
-    md.append(f"- **Heritage:** {user_info['stats'][2]['value']}")
-    
-    md.append("\n## 📊 Personal Highlights")
-    md.append("| Category | Detail |")
-    md.append("| :--- | :--- |")
-    for stat in user_info['stats']:
-        md.append(f"| {stat['label']} | {stat['value']} |")
-
-    md.append("\n## 🛠 Skills & Competencies")
-    for category, skills in user_info['skills'].items():
-        md.append(f"#### {category}")
-        md.append(", ".join([f"`{s}`" for s in skills]) + "")
-
-    md.append("\n## 🚀 Activities & Involvement")
-    for act in user_info['activities']:
-        md.append(f"### {act['name']}")
-        md.append(f"*{act['role']}*")
-        for detail in act['details']:
-            md.append(f"- {detail}")
-
-    md.append("\n## 📫 Get in Touch")
-    md.append(f"- **Email:** [{user_info['contact']['email']}](mailto:{user_info['contact']['email']})")
-    md.append(f"- **Phone:** {user_info['contact']['phone']}")
-    md.append(f"- **Location:** {user_info['contact']['location']}")
-
-    md.append("\n---\n<p align='center'><i>\"Committed to growth in every arena.\"</i></p>")
-
-    # File Creation Logic
-    file_path = "README.md"
-    try:
-        with open(file_path, "w", encoding="utf-8") as f:
-            f.write("\n".join(md))
-        print(f"Successfully generated {file_path} as a full replica of your website data.")
-    except Exception as e:
-        print(f"An error occurred while writing the file: {e}")
-
-if __name__ == "__main__":
-    generate_exact_readme()
+with open('ej_website.html', 'w') as file:
+    file.write(html_content)
